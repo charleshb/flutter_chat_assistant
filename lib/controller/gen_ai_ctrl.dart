@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
-import 'package:hive/hive.dart';
+//import 'package:hive/hive.dart';
 import 'package:fetch_client/fetch_client.dart' as fetch;
 
 import '../request_failure.dart';
@@ -39,6 +39,7 @@ class ChatController {
   String apiKey() => _apiKey;
   String apiUrl() => _apiUrl;
   String deploymentId() => _deploymentId;
+  List<types.Message> ChatMessages() => _chatMessages;
 
   Stream<T> postStream<T>({
     required String to,
