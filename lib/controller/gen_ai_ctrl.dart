@@ -24,7 +24,7 @@ const LineSplitter _chatStreamLineSplitter =
 
 class ChatController {
   ChatController(String apiUrl, String apiKey, String deploymentId, List<types.Message> chatMessages) {
-    // TODO: implement ChatController
+    // DONE: implement ChatController
     _apiUrl = apiUrl;
     _apiKey = apiKey;
     _deploymentId = deploymentId;
@@ -130,7 +130,7 @@ class ChatController {
     final Map<String, String> headers = <String, String>{
       'Content-Type': 'application/json'
       //,'Accept': 'text/event-stream'
-      // TODO: this changes for every deployment
+      // this changes for every deployment
       //,'azureml-model-deployment': deploymentId
     };
 
