@@ -7,7 +7,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../constants.dart';
 import '../hive_model/chat_item.dart';
 import '../shared/api_key_dialog.dart';
-import 'chat_page.dart';
+import 'chat_assistant_page.dart';
+import '../controller/gen_ai_ctrl.dart';
+//import 'chat_page.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -18,6 +20,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   List<ChatItem> chats = [];
+  late ChatController _chatController;
 
   @override
   void initState() {
@@ -36,7 +39,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ChatGPT Flutter'),
+        title: const Text('Home Builder Chat Assistant'),
         actions: [
           IconButton(
               onPressed: () {
@@ -59,7 +62,7 @@ class _HomeState extends State<Home> {
                   title: Text(chatItem.title),
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(builder: (_) {
-                      return ChatPage(chatItem: chatItem);
+                      return ChatAssistantPage(chatItem: chatItem);
                     }));
                   },
                   trailing: IconButton(
@@ -75,7 +78,8 @@ class _HomeState extends State<Home> {
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           try {
-            OpenAI.instance;
+            _chatController = ChatController("","","",[]);
+            //OpenAI.instance;
           } on MissingApiKeyException {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
@@ -104,7 +108,7 @@ class _HomeState extends State<Home> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (_) => ChatPage(chatItem: chatItem),
+              builder: (_) => ChatAssistantPage(chatItem: chatItem),
             ),
           );
         },

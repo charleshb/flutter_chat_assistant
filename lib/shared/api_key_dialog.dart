@@ -39,8 +39,8 @@ class _ApiKeyDialogState extends State<ApiKeyDialog> {
               }),
           TextButton(
             onPressed: () {
-              LinkLauncher.launch(
-                  'https://platform.openai.com/account/api-keys/');
+              // LinkLauncher.launch(
+              //     'https://platform.openai.com/account/api-keys/');
             },
             child: const Text('Get API key'),
           )

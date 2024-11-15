@@ -1,10 +1,10 @@
 ![Flutter](https://img.shields.io/badge/Flutter%203-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)
 
-# Flutter ChatGPT
+# Flutter Chat Assistant
 
-ChatGPT app built with Flutter
+Chat Assistant app built with Flutter
 
-![Flutter ChatGPT](https://imgur.com/YGUBL4x.png)
+![Flutter Chat Assistant](https://imgur.com/YGUBL4x.png)
 
 ## Features
 
